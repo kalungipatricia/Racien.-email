@@ -18,5 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//contact us page
+Route::get('email','EmailController@index');
 Route::get('contact', 'ContactController@index');
+
+Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
+//
+//Route::get('contact', 'ContactController@contact');
+//Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
